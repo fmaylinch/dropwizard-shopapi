@@ -21,8 +21,12 @@ public class ShopApiApplication extends Application<ShopApiConfiguration> {
     }
 
     @Override
-    public void run(ShopApiConfiguration configuration,
-                    Environment environment) {
-        // nothing to do yet
+    public void run(ShopApiConfiguration configuration, Environment environment) {
+
+        String envName = configuration.getEnvironment();
+        System.out.println("Environment: " + envName);
+
+        ProductResource productResource = new ProductResource();
+        environment.jersey().register(productResource);
     }
 }
