@@ -1,6 +1,7 @@
 package com.codethen.shopapi;
 
 import io.dropwizard.Application;
+import io.dropwizard.assets.AssetsBundle;
 import io.dropwizard.setup.Bootstrap;
 import io.dropwizard.setup.Environment;
 
@@ -17,7 +18,7 @@ public class ShopApiApplication extends Application<ShopApiConfiguration> {
 
     @Override
     public void initialize(Bootstrap<ShopApiConfiguration> bootstrap) {
-        // nothing to do yet
+        bootstrap.addBundle(new AssetsBundle("/assets/", "/"));
     }
 
     @Override
